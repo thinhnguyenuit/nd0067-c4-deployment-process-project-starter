@@ -53,8 +53,10 @@ jobs:
       - checkout
       - run:
           name: Deploy App
-          # TODO: Install, build, deploy in both apps
           command: |
+            echo $AWS_PROFILE
+            cat ~/.aws/config
+            cat ~/.aws/credentials
             npm run deploy
 
 workflows:
